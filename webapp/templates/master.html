@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        .navbar{
+            padding: 20px 70px;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.299);
+            background-color: #fff;
+        }
+
+        .extra-padding{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><b>ImageConverter.com</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse extra-padding" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle text-uppercase" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  All Image Tool
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/image-to-png">PNG Converter</a></li>
+                  <li><a class="dropdown-item" href="/image-to-jpg">JPG Converter</a></li>
+                  <li><a class="dropdown-item" href="/image-to-jpeg">JPEG Converter</a></li>
+                  <li><a class="dropdown-item" href="/image-to-gif">GIF Converter</a></li>
+                  <li><a class="dropdown-item" href="/image-to-webp">WEBP Converter</a></li>
+                  <li><a class="dropdown-item" href="/image-to-pdf">PDF Converter</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
